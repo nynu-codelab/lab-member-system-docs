@@ -27,7 +27,7 @@ V1.1 实现实验室成员的增删改查（后端 RESTful API + 前端管理页
 
 1. 向本仓库（`nynu-codelab/lab-member-system-docs`）发起 Pull Request
 2. 标题格式：`[姓名] lab-member-system 提交`
-3. PR 描述写清楚完成情况与自测结果（按测试用例逐项说明）
+3. PR 描述按仓库 PR 模板的「成果提交」部分填写：完成情况、自测结果、AI 辅助说明
 4. 管理员会在 PR 中评审并按验收标准打分；**成果 PR 只评审、不合并**
 5. 验收通过后 PR 关闭，结果记入实验室记录
 
