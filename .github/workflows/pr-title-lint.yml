@@ -1,0 +1,30 @@
+name: PR Title Lint
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions:
+  contents: read
+
+jobs:
+  check-title:
+    name: Check PR Title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate PR title format
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          echo "PR title: $TITLE"
+          # 新人成果提交 PR：允许 [姓名] ... 提交 格式
+          if echo "$TITLE" | grep -qE '^\[[^]]+\].*(提交|submission|project)'; then
+            echo "OK: 成果提交 PR"
+            exit 0
+          fi
+          # 仓库维护 PR：Conventional Commits 格式
+          if ! echo "$TITLE" | grep -qE '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore)(\([a-z0-9_-]+\))?!?: .+';
+          then
+            echo "::error::PR 标题需符合格式：成果提交用 [姓名] lab-member-system 提交；维护改动用 type(scope): description，例如 chore(approval): 审批线调整"
+            exit 1
+          fi

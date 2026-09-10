@@ -11,6 +11,26 @@
 
 V1.1 实现实验室成员的增删改查（后端 RESTful API + 前端管理页面），不引入登录、权限、Redis、MQ、微服务等复杂功能。
 
+## 协作要求与提交流程（新人必读）
+
+**动手前**：先读 [docs 仓库](https://github.com/nynu-codelab/docs) 的 `software/` 规范（Git 协作、GitHub 协作、工程规范），再读本文档目录下的题目文档。
+
+**做题方式**：
+
+1. Fork 本仓库到自己的 GitHub 账号
+2. 在自己的 fork 中开发，分支名使用 `feature/xxx`（如 `feature/member-crud`）
+3. 提交信息遵循规范：`feat: xxx`、`fix: xxx` 等前缀
+4. 不直接推 main，只向自己的 feature 分支提交
+5. 允许使用 AI 辅助开发，但必须能解释自己的代码、数据库设计与接口设计
+
+**完成后（成果 PR）**：
+
+1. 向本仓库（`nynu-codelab/lab-member-system-docs`）发起 Pull Request
+2. 标题格式：`[姓名] lab-member-system 提交`
+3. PR 描述写清楚完成情况与自测结果（按测试用例逐项说明）
+4. 管理员会在 PR 中评审并按验收标准打分；**成果 PR 只评审、不合并**
+5. 验收通过后 PR 关闭，结果记入实验室记录
+
 ## 文档
 
 - [需求文档](docs/01-需求文档.md)
