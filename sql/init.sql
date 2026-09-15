@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS lab_member (
     grade VARCHAR(20) NOT NULL COMMENT '年级',
     major VARCHAR(100) NOT NULL COMMENT '专业',
     department VARCHAR(32) NOT NULL COMMENT '部门：SOFTWARE软件研发部，ACHIEVEMENT成果中心',
-    position VARCHAR(32) NOT NULL COMMENT '职位：CAPTAIN队长，VICE_CAPTAIN副队长，FRONTEND前端，BACKEND后端，FULLSTACK全栈，PRODUCT产品，QA测试，DEVOPS运维',
+    position VARCHAR(32) NOT NULL COMMENT '职位：CAPTAIN队长，VICE_CAPTAIN副队长，FRONTEND前端，BACKEND后端，FULLSTACK全栈，PRODUCT产品，QA测试，DEVOPS运维，ACHIEVEMENT成果中心',
     profile_status VARCHAR(32) NOT NULL DEFAULT 'PENDING' COMMENT '资料状态：PENDING待补录，COMPLETED已完成，ESCALATED已升级',
     phone VARCHAR(20) NULL COMMENT '手机号',
     email VARCHAR(100) NULL COMMENT '邮箱',
@@ -31,7 +31,7 @@ VALUES
 ('赵六', '20240002', 2, '2024', '软件工程', 'SOFTWARE', 'PRODUCT', 'COMPLETED', '13800138004', 'zhaoliu@example.com', 1),
 ('孙七', '20250001', 1, '2025', '计算机科学与技术', 'SOFTWARE', 'QA', 'COMPLETED', '13800138005', 'sunqi@example.com', 1),
 ('周八', '20250002', 2, '2025', '人工智能', 'SOFTWARE', 'DEVOPS', 'COMPLETED', '13800138006', 'zhouba@example.com', 1),
-('吴九', '20230003', 1, '2023', '数据科学与大数据技术', 'ACHIEVEMENT', 'PRODUCT', 'PENDING', NULL, NULL, 1),
-('郑十', '20240003', 2, '2024', '软件工程', 'ACHIEVEMENT', 'QA', 'COMPLETED', NULL, NULL, 1),
+('吴九', '20230003', 1, '2023', '数据科学与大数据技术', 'ACHIEVEMENT', 'ACHIEVEMENT', 'PENDING', NULL, NULL, 1),
+('郑十', '20240003', 2, '2024', '软件工程', 'ACHIEVEMENT', 'VICE_CAPTAIN', 'COMPLETED', NULL, NULL, 1),
 ('钱十一', '20250003', 1, '2025', '网络工程', 'SOFTWARE', 'DEVOPS', 'ESCALATED', '13800138009', 'qian11@example.com', 0),
-('冯十二', '20230004', 2, '2023', '人工智能', 'ACHIEVEMENT', 'VICE_CAPTAIN', 'COMPLETED', '13800138010', 'feng12@example.com', 1);
+('冯十二', '20230004', 2, '2023', '人工智能', 'SOFTWARE', 'CAPTAIN', 'COMPLETED', '13800138010', 'feng12@example.com', 1);
