@@ -1,7 +1,7 @@
 # 实验室成员管理系统（新人入门项目）
 
 > CodeLab 新人第一个完整前后端项目：从需求分析走到验收交付的全流程练习。
-> 仓库版本 V1.3 ｜ 题目文档版本：需求 V1.2 / 数据库 V1.1 / 接口 V1.1 / 测试用例 V1.2
+> 仓库版本 V1.4 ｜ 题目文档版本：需求 V1.3 / 数据库 V1.2 / 接口 V1.2 / 测试用例 V1.3
 
 本仓库是新人题目的**发布与成果提交入口**，不是通用项目仓库：题目文档、初始化脚本、CI 与审批线在这里统一维护；新人按题目规格在自己的 Fork 中开发，完成后向本仓库提交 PR，由管理员评审并按验收标准打分。
 
@@ -33,12 +33,12 @@
 
 ## 2. 组织模型与枚举（不要写错）
 
-CodeLab 只维护**两个部门**，职位共**八类**：
+CodeLab 只维护**两个部门**，职位共**九类**：
 
 | 字段 | 取值 | 中文 |
 | --- | --- | --- |
 | department | `SOFTWARE` | 软件研发部（承载前端、后端、全栈、产品、测试、运维职位） |
-| department | `ACHIEVEMENT` | 成果中心（承载成果归档、竞赛、论文、专利、软著与企业合作事务） |
+| department | `ACHIEVEMENT` | 成果中心（成员职位为「成果中心」，承载成果归档、竞赛、论文、专利、软著与企业合作） |
 | position | `CAPTAIN` | 队长 |
 | position | `VICE_CAPTAIN` | 副队长 |
 | position | `FRONTEND` | 前端 |
@@ -47,6 +47,7 @@ CodeLab 只维护**两个部门**，职位共**八类**：
 | position | `PRODUCT` | 产品 |
 | position | `QA` | 测试 |
 | position | `DEVOPS` | 运维 |
+| position | `ACHIEVEMENT` | 成果中心 |
 | profileStatus | `PENDING` | 待补录 |
 | profileStatus | `COMPLETED` | 资料与部门职位已确认 |
 | profileStatus | `ESCALATED` | 超过 7 天仍未完成，已进入人工跟进名单 |
@@ -54,6 +55,8 @@ CodeLab 只维护**两个部门**，职位共**八类**：
 | gender | `0` / `1` / `2` | 0 未知 / 1 男 / 2 女 |
 
 **数据库里存英文枚举码，不要直接存中文。** 枚举校验要在后端做（前端同时做一遍，规则保持一致）。
+
+**部门与职位必须匹配**：六个研发职位（`FRONTEND` / `BACKEND` / `FULLSTACK` / `PRODUCT` / `QA` / `DEVOPS`）只能配 `SOFTWARE`；`ACHIEVEMENT` 只能配 `ACHIEVEMENT`；管理职位（`CAPTAIN` / `VICE_CAPTAIN`）可以配任一部门。不匹配的组合按参数错误处理（`400`），后端校验、前端同时校验。
 
 ## 3. 成员字段规格
 
@@ -68,7 +71,7 @@ CodeLab 只维护**两个部门**，职位共**八类**：
 | phone | String | 否 | 填写时校验手机号格式 |
 | email | String | 否 | 填写时校验邮箱格式 |
 | department | String | 是 | `SOFTWARE` / `ACHIEVEMENT` |
-| position | String | 是 | 八类职位之一 |
+| position | String | 是 | 九类职位之一（且与 department 匹配） |
 | profileStatus | String | 是 | `PENDING` / `COMPLETED` / `ESCALATED`，默认 `PENDING` |
 | status | Integer | 是 | 0 / 1，默认 1 |
 | createTime | DateTime | 否 | 创建时间 |
@@ -79,7 +82,7 @@ CodeLab 只维护**两个部门**，职位共**八类**：
 - 库名 `lab_system`，MySQL 8.x，字符集 `utf8mb4`
 - 表 `lab_member`，字段与上表一一对应（下划线命名：`student_no`、`profile_status`、`create_time`、`update_time`）
 - 必须的约束：`id` 主键自增、`student_no` 唯一索引、必填字段 `NOT NULL`
-- 至少 10 条初始化数据，且要覆盖：不同年级、不同性别、**两个部门**、不同职位、**三种资料状态**、正常成员与已离开成员、有联系方式与无联系方式
+- 至少 10 条初始化数据，且要覆盖：不同年级、不同性别、**两个部门**、不同职位（含 `ACHIEVEMENT` 成果中心职位）、**三种资料状态**、正常成员与已离开成员、有联系方式与无联系方式
 - 列表查询走**数据库分页**，禁止查全量再在 Java 内存里切页
 
 ## 5. 接口速查
@@ -252,3 +255,4 @@ cd frontend && npm install && npm run build
 | V1.1 | - | README 初版：协作要求、推荐流程、基础验收 |
 | V1.2 | - | 需求 V1.2 与测试用例 V1.2：补充部门职位枚举、资料状态、前端用例与数据一致性用例 |
 | V1.3 | - | 规范与流程入口改指飞书；文案对齐平台分工（制度规范在飞书，技术文档随项目） |
+| V1.4 | - | 职位枚举新增 `ACHIEVEMENT`（成果中心）；补充部门与职位的匹配校验及对应测试用例 |
