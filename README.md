@@ -56,8 +56,6 @@ CodeLab 只维护**两个部门**，职位共**九类**：
 
 **数据库里存英文枚举码，不要直接存中文。** 枚举校验要在后端做（前端同时做一遍，规则保持一致）。
 
-**部门与职位必须匹配**：六个研发职位（`FRONTEND` / `BACKEND` / `FULLSTACK` / `PRODUCT` / `QA` / `DEVOPS`）只能配 `SOFTWARE`；`ACHIEVEMENT` 只能配 `ACHIEVEMENT`；管理职位（`CAPTAIN` / `VICE_CAPTAIN`）可以配任一部门。不匹配的组合按参数错误处理（`400`），后端校验、前端同时校验。
-
 ## 3. 成员字段规格
 
 | 字段 | 类型 | 必填 | 说明 |
@@ -71,7 +69,7 @@ CodeLab 只维护**两个部门**，职位共**九类**：
 | phone | String | 否 | 填写时校验手机号格式 |
 | email | String | 否 | 填写时校验邮箱格式 |
 | department | String | 是 | `SOFTWARE` / `ACHIEVEMENT` |
-| position | String | 是 | 九类职位之一（且与 department 匹配） |
+| position | String | 是 | 九类职位之一 |
 | profileStatus | String | 是 | `PENDING` / `COMPLETED` / `ESCALATED`，默认 `PENDING` |
 | status | Integer | 是 | 0 / 1，默认 1 |
 | createTime | DateTime | 否 | 创建时间 |
@@ -255,4 +253,4 @@ cd frontend && npm install && npm run build
 | V1.1 | - | README 初版：协作要求、推荐流程、基础验收 |
 | V1.2 | - | 需求 V1.2 与测试用例 V1.2：补充部门职位枚举、资料状态、前端用例与数据一致性用例 |
 | V1.3 | - | 规范与流程入口改指飞书；文案对齐平台分工（制度规范在飞书，技术文档随项目） |
-| V1.4 | - | 职位枚举新增 `ACHIEVEMENT`（成果中心）；补充部门与职位的匹配校验及对应测试用例 |
+| V1.4 | - | 职位枚举新增 `ACHIEVEMENT`（成果中心） |
