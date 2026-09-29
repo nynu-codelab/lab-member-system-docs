@@ -245,6 +245,10 @@ cd frontend && npm install && npm run build
 
 允许使用 AI Coding 工具辅助开发，这也是本项目的训练目标之一。但提交者必须能够解释：代码结构、数据库设计理由、接口设计理由、测试如何覆盖需求。PR 里有专门的「AI 辅助说明」栏，请如实填写用到了哪些部分、自己怎么验证的。答不出实现细节的提交，即使功能跑通也不通过验收。
 
+## 遇到问题
+
+按顺序排查：① 先看第 12 节常见问题，大多数坑都在那里；② 制度与流程类问题查飞书[《成员手册》](https://mcnccybqf361.feishu.cn/docx/QcrBd22vFo1NfSxHNoEcZWHZnfF)与[《协作流程》](https://mcnccybqf361.feishu.cn/docx/VK2gdUejDoLZYyxrYZJcsuoJnPc)；③ 仍解决不了的，在实验室飞书群提问，附上已尝试的步骤与报错信息。
+
 ## 变更记录
 
 | 版本 | 日期 | 变更 |
@@ -254,3 +258,7 @@ cd frontend && npm install && npm run build
 | V1.2 | - | 需求 V1.2 与测试用例 V1.2：补充部门职位枚举、资料状态、前端用例与数据一致性用例 |
 | V1.3 | - | 规范与流程入口改指飞书；文案对齐平台分工（制度规范在飞书，技术文档随项目） |
 | V1.4 | - | 职位枚举新增 `ACHIEVEMENT`（成果中心） |
+
+## 许可证
+
+[MIT](LICENSE)
