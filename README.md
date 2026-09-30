@@ -1,7 +1,21 @@
-# 实验室成员管理系统（新人入门项目）
+<!-- markdownlint-disable MD041 -->
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="实验室成员管理系统" width="100%">
+</p>
 
-> CodeLab 新人第一个完整前后端项目：从需求分析走到验收交付的全流程练习。
-> 仓库版本 V1.4 ｜ 题目文档版本：需求 V1.3 / 数据库 V1.2 / 接口 V1.2 / 测试用例 V1.3
+<h1 align="center">实验室成员管理系统（新人入门项目）</h1>
+
+<p align="center"><strong>CodeLab 新人第一个完整前后端项目：从需求分析走到验收交付的全流程练习。</strong></p>
+
+<p align="center">
+  <a href="https://github.com/nynu-codelab/lab-member-system-docs/actions/workflows/markdown-lint.yml"><img src="https://github.com/nynu-codelab/lab-member-system-docs/actions/workflows/markdown-lint.yml/badge.svg" alt="Markdown Lint" /></a>
+  <a href="https://github.com/nynu-codelab/lab-member-system-docs/actions/workflows/pr-title-lint.yml"><img src="https://github.com/nynu-codelab/lab-member-system-docs/actions/workflows/pr-title-lint.yml/badge.svg" alt="PR Title Lint" /></a>
+  <img src="https://img.shields.io/badge/Java-17-f89820?logo=openjdk&logoColor=white" alt="Java 17" />
+  <img src="https://img.shields.io/badge/Vue-3-42B883?logo=vuedotjs&logoColor=white" alt="Vue 3" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+</p>
+
+<p align="center">仓库版本 V1.4 ｜ 题目文档版本：需求 V1.3 / 数据库 V1.2 / 接口 V1.2 / 测试用例 V1.3</p>
 
 本仓库是新人题目的**发布与成果提交入口**，不是通用项目仓库：题目文档、初始化脚本、CI 与审批线在这里统一维护；新人按题目规格在自己的 Fork 中开发，完成后向本仓库提交 PR，由管理员评审并按验收标准打分。
 
